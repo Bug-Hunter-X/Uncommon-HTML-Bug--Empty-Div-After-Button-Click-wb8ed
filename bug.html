@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; // Clears the div content
+      // Missing crucial step: Add content back to the div after clearing it.
+      // For example, to restore the text: 
+document.getElementById("myDiv").innerHTML = "Text restored!"; 
+    }
+  </script>
+</body>
+</html>
